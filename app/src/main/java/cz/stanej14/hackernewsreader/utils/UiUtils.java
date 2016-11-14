@@ -6,7 +6,7 @@ import android.util.DisplayMetrics;
 
 /**
  * Utility class for UI.
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {13.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {13.11.16}
  **/
 public class UiUtils {
     public static final String TAG = UiUtils.class.getName();

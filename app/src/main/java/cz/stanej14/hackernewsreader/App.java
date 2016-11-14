@@ -12,7 +12,7 @@ import timber.log.Timber;
 /**
  * Application class for this application
  * <p/>
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  */
 public class App extends Application {
 

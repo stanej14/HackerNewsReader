@@ -11,7 +11,7 @@ import dagger.Provides;
 
 /**
  * Module that handle injecting application class (ie Context)
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  */
 @Module
 public class AppModule {

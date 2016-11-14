@@ -16,7 +16,7 @@ import dagger.Provides;
 
 /**
  * Module that handles injecting Interactors
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  */
 @Module(
         includes = {ServiceModule.class}

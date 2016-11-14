@@ -8,7 +8,7 @@ import cz.stanej14.hackernewsreader.mvp.view.base.IShowRetryView;
 
 /**
  * View for {@link BestStoriesFeedPresenter}.
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  **/
 public interface IBestStoriesFeedView extends IShowRetryView {
     void showError();

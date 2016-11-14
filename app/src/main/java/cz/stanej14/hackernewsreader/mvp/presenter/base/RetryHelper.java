@@ -9,7 +9,7 @@ import rx.subjects.PublishSubject;
 
 /**
  * Helper class that takes care of retrying.
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  **/
 public class RetryHelper {
     public static final String TAG = RetryHelper.class.getName();

@@ -8,7 +8,7 @@ import rx.subjects.Subject;
 
 /**
  * Reactive event bus.
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  */
 public class RxBus {
     public static final String TAG = RxBus.class.getName();

@@ -15,7 +15,7 @@ import nucleus.view.NucleusFragment;
 /**
  * Base fragment that implements {@link IShowRetryView} so that it's able to handle retrying of observables.
  * <p>
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {28.6.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {28.6.16}
  **/
 public abstract class BaseRetryNucleusFragment<P extends BaseRxPresenter> extends NucleusFragment<P> implements IShowRetryView {
 

@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 
 /**
  * Implementation of {@link ISpInteractor}
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  **/
 public class SpInteractor implements ISpInteractor {
     public static final String TAG = SpInteractor.class.getName();

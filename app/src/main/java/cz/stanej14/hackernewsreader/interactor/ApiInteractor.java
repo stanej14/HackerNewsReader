@@ -15,7 +15,7 @@ import rx.Observable;
 
 /**
  * Implementation for {@link IApiInteractor}.
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  **/
 public class ApiInteractor implements IApiInteractor {
     public static final String TAG = ApiInteractor.class.getName();

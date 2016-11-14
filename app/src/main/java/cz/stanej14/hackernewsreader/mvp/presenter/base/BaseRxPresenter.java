@@ -14,7 +14,7 @@ import rx.schedulers.Schedulers;
 import timber.log.Timber;
 
 /**
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  **/
 public class BaseRxPresenter<View> extends RxPresenter<View> {
     public static final String TAG = BaseRxPresenter.class.getName();

@@ -27,7 +27,7 @@ import nucleus.factory.RequiresPresenter;
 
 /**
  * Fragment displaying feed of best stories.
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {13.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {13.11.16}
  **/
 @RequiresPresenter(BestStoriesFeedPresenter.class)
 public class BestStoriesFeedFragment extends BaseRetryNucleusFragment<BestStoriesFeedPresenter> implements IBestStoriesFeedView {

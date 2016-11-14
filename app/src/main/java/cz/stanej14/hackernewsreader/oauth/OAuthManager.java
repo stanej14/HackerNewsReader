@@ -7,7 +7,7 @@ import cz.stanej14.hackernewsreader.domain.model.OAuthCredentials;
 
 /**
  * Manager for dealing with Oauth2 authorization
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {12.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  **/
 public class OAuthManager {
     public static final String TAG = OAuthManager.class.getName();

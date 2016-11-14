@@ -4,7 +4,7 @@ import java.util.UUID;
 
 /**
  * Interface for views able to retry request.
- * Created by Jan Stanek[jan.stanek@ackee.cz] on {13.11.16}
+ * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {13.11.16}
  **/
 public interface IShowRetryView {
     void showRetry(Throwable throwable, UUID uuid);
