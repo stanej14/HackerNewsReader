@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 
 import javax.inject.Singleton;
 
+import cz.stanej14.hackernewsreader.RxBus;
 import cz.stanej14.hackernewsreader.domain.rest.ApiDescription;
 import cz.stanej14.hackernewsreader.interactor.ApiInteractor;
 import cz.stanej14.hackernewsreader.interactor.IApiInteractor;
@@ -24,8 +25,8 @@ public class InteractorsModule {
 
     @Provides
     @Singleton
-    public IApiInteractor provideApiInteractor(@NonNull ApiDescription apiDescription) {
-        return new ApiInteractor(apiDescription);
+    public IApiInteractor provideApiInteractor(@NonNull ApiDescription apiDescription, @NonNull Application application, @NonNull RxBus bus) {
+        return new ApiInteractor(apiDescription, application, bus);
     }
 
     @Provides

@@ -26,8 +26,7 @@ public class BaseRxPresenter<View> extends RxPresenter<View> {
 
     /**
      * Accept retry option so that observable will be retried.
-     */
-    public void onRetryAccepted(@NonNull UUID uuid) {
+     */    public void onRetryAccepted(@NonNull UUID uuid) {
         retryHelper.onRetryAccepted(uuid);
         Timber.log(Log.INFO, "Retry accepted.");
     }

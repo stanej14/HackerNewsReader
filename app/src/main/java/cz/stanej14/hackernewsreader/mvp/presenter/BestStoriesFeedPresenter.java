@@ -11,6 +11,7 @@ import cz.stanej14.hackernewsreader.domain.event.RefreshBestStoriesFeedEvent;
 import cz.stanej14.hackernewsreader.interactor.IApiInteractor;
 import cz.stanej14.hackernewsreader.mvp.presenter.base.BaseRxPresenter;
 import cz.stanej14.hackernewsreader.mvp.view.IBestStoriesFeedView;
+import cz.stanej14.hackernewsreader.oauth.RxOauthManaging;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;

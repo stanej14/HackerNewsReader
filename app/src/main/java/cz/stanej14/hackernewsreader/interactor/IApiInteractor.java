@@ -1,8 +1,11 @@
 package cz.stanej14.hackernewsreader.interactor;
 
+import android.support.annotation.NonNull;
+
 import java.util.List;
 
 import cz.stanej14.hackernewsreader.domain.model.Item;
+import cz.stanej14.hackernewsreader.domain.model.OAuthCredentials;
 import rx.Observable;
 
 /**
@@ -13,4 +16,6 @@ public interface IApiInteractor {
     Observable<List<Integer>> obtainBestStoriesIdList();
 
     Observable<Item> obtainItem(int itemId);
+
+    Observable<OAuthCredentials> refreshAccessToken(@NonNull String refreshToken);
 }
