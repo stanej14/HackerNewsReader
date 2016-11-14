@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">HackerNewsReader</string>
+
+    <!--BASIC-->
+    <string name="retry">Retry</string>
+
+    <!--MAIN -->
+    <string name="main_error">Ups, something went wrong</string>
+    <string name="main_empty_list">No stories have been found</string>
+
+    <!--ERRORS-->
+    <string name="error_network">Network error</string>
+    <string name="error_server">Server error - %d</string>
+    <string name="error_client">Error %d</string>
+    <string name="error_authentication">Not authorized</string>
+    <string name="error_general">Error</string>
+</resources>
