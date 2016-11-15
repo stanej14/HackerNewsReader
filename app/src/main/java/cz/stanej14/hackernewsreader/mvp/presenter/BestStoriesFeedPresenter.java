@@ -29,7 +29,6 @@ public class BestStoriesFeedPresenter extends BaseRxPresenter<IBestStoriesFeedVi
 
     @Inject
     RxBus rxBus;
-    private Subscription refreshSubscription;
 
     /**
      * User has clicked on an item.
@@ -51,15 +50,9 @@ public class BestStoriesFeedPresenter extends BaseRxPresenter<IBestStoriesFeedVi
         super.onCreate(savedState);
         App.getAppComponent().inject(this);
         obtainBestStoriesFeed();
-        refreshSubscription = rxBus.observe(RefreshBestStoriesFeedEvent.class)
+        add(rxBus.observe(RefreshBestStoriesFeedEvent.class)
                 .doOnNext(v -> refresh())
-                .subscribe();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        refreshSubscription.unsubscribe();
+                .subscribe());
     }
 
     private Subscription obtainBestStoriesFeed() {

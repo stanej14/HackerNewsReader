@@ -83,7 +83,7 @@ public class BestStoriesFeedFragment extends BaseRetryNucleusFragment<BestStorie
     }
 
     @Override
-    public void openDetail(Item item) {
+    public void openDetail(@NonNull Item item) {
         Intent intent = new Intent(getActivity(), StoryDetailActivity.class);
         intent.putExtras(StoryDetailPresenter.createBundle(item));
         startActivity(intent);

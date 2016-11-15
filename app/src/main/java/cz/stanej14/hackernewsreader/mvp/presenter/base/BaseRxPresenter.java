@@ -64,7 +64,6 @@ public class BaseRxPresenter<View> extends RxPresenter<View> {
                             }, t -> {
                                 Timber.log(Log.ERROR, "Error when obtaining view in presenter.");
                             });
-                            Timber.log(Log.WARN, "Observable failed due to API/Network error. Showing retry option.");
 
                             // Depending on user's choice retry observable.
                             return retryHelper.getRetryObservable(uuid)

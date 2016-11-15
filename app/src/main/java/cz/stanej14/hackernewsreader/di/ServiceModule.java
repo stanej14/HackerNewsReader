@@ -11,10 +11,10 @@ import cz.stanej14.hackernewsreader.domain.rest.ApiDescription;
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import timber.log.Timber;
 
 /**
  * Module providing api services
@@ -40,10 +40,11 @@ public class ServiceModule {
     }
 
     private static OkHttpClient generateClient() {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         return new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
+                .addInterceptor(chain -> {
+                    Timber.i(chain.request().url().toString());
+                    return chain.proceed(chain.request());
+                })
                 .build();
     }
 }
