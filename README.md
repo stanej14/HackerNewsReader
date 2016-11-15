@@ -1,6 +1,6 @@
 # Reader for the best stories of Hacker News.
 
-This is example application that is built on MVP using Nucleus library and Dagger. Application uses RxAndroid, Retrofit, Butterknife, Timber and ParcelablePlease.
+This is an example application that is built on MVP using Nucleus library and Dagger. Application uses RxAndroid, Retrofit, Butterknife, Timber and ParcelablePlease.
 
 
 
