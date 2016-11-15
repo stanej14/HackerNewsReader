@@ -8,6 +8,7 @@ import java.util.List;
 import cz.stanej14.hackernewsreader.RxBus;
 import cz.stanej14.hackernewsreader.domain.model.Item;
 import cz.stanej14.hackernewsreader.domain.model.OAuthCredentials;
+import cz.stanej14.hackernewsreader.domain.model.User;
 import cz.stanej14.hackernewsreader.domain.rest.ApiDescription;
 import cz.stanej14.hackernewsreader.oauth.OAuthManager;
 import cz.stanej14.hackernewsreader.oauth.RxOauthManaging;
@@ -40,5 +41,10 @@ public class ApiInteractor implements IApiInteractor {
     @Override
     public Observable<OAuthCredentials> refreshAccessToken(@NonNull String refreshToken) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public Observable<User> obtainUser(@NonNull String author) {
+        return apiDescription.obtainUser(author);
     }
 }

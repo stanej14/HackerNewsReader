@@ -6,6 +6,7 @@ import java.util.List;
 
 import cz.stanej14.hackernewsreader.domain.model.Item;
 import cz.stanej14.hackernewsreader.domain.model.OAuthCredentials;
+import cz.stanej14.hackernewsreader.domain.model.User;
 import rx.Observable;
 
 /**
@@ -18,4 +19,6 @@ public interface IApiInteractor {
     Observable<Item> obtainItem(int itemId);
 
     Observable<OAuthCredentials> refreshAccessToken(@NonNull String refreshToken);
+
+    Observable<User> obtainUser(@NonNull String author);
 }

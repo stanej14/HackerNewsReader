@@ -14,4 +14,9 @@
     <string name="error_client">Error %d</string>
     <string name="error_authentication">Not authorized</string>
     <string name="error_general">Error</string>
+
+    <!--STORY DETAIL-->
+    <string name="story_detail_score">Score: %d</string>
+    <string name="story_detail_author">Author: %1$s</string>
+    <string name="story_detail_author_karma">Karma: %d</string>
 </resources>

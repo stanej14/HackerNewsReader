@@ -1,4 +1,4 @@
-package cz.stanej14.hackernewsreader.ui.activity;
+package cz.stanej14.hackernewsreader.ui.activity.base;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

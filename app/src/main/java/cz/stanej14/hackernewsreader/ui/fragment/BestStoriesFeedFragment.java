@@ -2,7 +2,6 @@ package cz.stanej14.hackernewsreader.ui.fragment;
 
 import android.content.Intent;
 import android.graphics.Rect;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,7 +18,9 @@ import butterknife.ButterKnife;
 import cz.stanej14.hackernewsreader.R;
 import cz.stanej14.hackernewsreader.domain.model.Item;
 import cz.stanej14.hackernewsreader.mvp.presenter.BestStoriesFeedPresenter;
+import cz.stanej14.hackernewsreader.mvp.presenter.StoryDetailPresenter;
 import cz.stanej14.hackernewsreader.mvp.view.IBestStoriesFeedView;
+import cz.stanej14.hackernewsreader.ui.activity.StoryDetailActivity;
 import cz.stanej14.hackernewsreader.ui.adapter.ItemAdapter;
 import cz.stanej14.hackernewsreader.ui.fragment.base.BaseRetryNucleusFragment;
 import cz.stanej14.hackernewsreader.utils.UiUtils;
@@ -80,6 +81,13 @@ public class BestStoriesFeedFragment extends BaseRetryNucleusFragment<BestStorie
     }
 
     @Override
+    public void openDetail(Item item) {
+        Intent intent = new Intent(getActivity(), StoryDetailActivity.class);
+        intent.putExtras(StoryDetailPresenter.createBundle(item));
+        startActivity(intent);
+    }
+
+    @Override
     public void showBestStoryItem(@NonNull Item item) {
         if (itemAdapter == null) {
             itemAdapter = new ItemAdapter(getPresenter()::onItemClicked);
@@ -91,12 +99,5 @@ public class BestStoriesFeedFragment extends BaseRetryNucleusFragment<BestStorie
         }
         recycler.setVisibility(View.VISIBLE);
         textError.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void openUrl(@NonNull String url) {
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(url));
-        startActivity(i);
     }
 }

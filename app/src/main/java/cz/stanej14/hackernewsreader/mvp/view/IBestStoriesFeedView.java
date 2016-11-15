@@ -13,7 +13,7 @@ import cz.stanej14.hackernewsreader.mvp.view.base.IShowRetryView;
 public interface IBestStoriesFeedView extends IShowRetryView {
     void showError();
 
-    void openUrl(@NonNull String url);
+    void openDetail(@NonNull Item item);
 
     void showBestStoryItem(@NonNull Item item);
 }

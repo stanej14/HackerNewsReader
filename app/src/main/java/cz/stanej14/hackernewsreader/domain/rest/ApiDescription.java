@@ -3,6 +3,7 @@ package cz.stanej14.hackernewsreader.domain.rest;
 import java.util.List;
 
 import cz.stanej14.hackernewsreader.domain.model.Item;
+import cz.stanej14.hackernewsreader.domain.model.User;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import rx.Observable;
@@ -19,4 +20,7 @@ public interface ApiDescription {
 
     @GET(API_VERSION + "/item/{id}.json")
     Observable<Item> obtainItem(@Path("id") int storyId);
+
+    @GET(API_VERSION + "/user/{id}.json")
+    Observable<User> obtainUser(@Path("id") String userId);
 }

@@ -1,36 +1,40 @@
 package cz.stanej14.hackernewsreader.domain.model;
 
-import com.google.gson.annotations.SerializedName;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.gson.annotations.SerializedName;
+import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
 
 /**
  * HackerNews Item.
  * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
  **/
-public class Item {
+@ParcelablePlease
+public class Item implements Parcelable {
     public static final String TAG = Item.class.getName();
 
-    private int id;
+    int id;
 
     @SerializedName("by")
-    private String author;
+    String author;
 
     @SerializedName("descendants")
-    private int numberOfDescendants;
+    int numberOfDescendants;
 
-    private List<Integer> kids = new ArrayList<Integer>();
+    int[] kids;
 
-    private int score;
+    int score;
 
-    private long time;
+    long time;
 
-    private String title;
+    String text;
 
-    private String type;
+    String title;
 
-    private String url;
+    String type;
+
+    String url;
 
     public int getId() {
         return id;
@@ -44,7 +48,7 @@ public class Item {
         return numberOfDescendants;
     }
 
-    public List<Integer> getKids() {
+    public int[] getKids() {
         return kids;
     }
 
@@ -67,4 +71,30 @@ public class Item {
     public String getUrl() {
         return url;
     }
+
+    public String getText() {
+        return text;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        ItemParcelablePlease.writeToParcel(this, dest, flags);
+    }
+
+    public static final Creator<Item> CREATOR = new Creator<Item>() {
+        public Item createFromParcel(Parcel source) {
+            Item target = new Item();
+            ItemParcelablePlease.readFromParcel(target, source);
+            return target;
+        }
+
+        public Item[] newArray(int size) {
+            return new Item[size];
+        }
+    };
 }

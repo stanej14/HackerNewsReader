@@ -31,6 +31,7 @@ ext {
     retrofitVersion = '2.1.0'
     sqlBriteVersion = '0.6.1'
     supportLibVersion = '24.2.1'
+    parcelablePleaseVersion = '1.0.2'
 }
 
 
@@ -67,6 +68,10 @@ dependencies {
     apt 'com.google.dagger:dagger-compiler:2.0.2'
     provided 'org.glassfish:javax.annotation:10.0-b28'
     compile 'com.google.dagger:dagger:2.0.2'
+
+    // Parcelable
+    compile "com.hannesdorfmann.parcelableplease:annotation:${parcelablePleaseVersion}"
+    apt "com.hannesdorfmann.parcelableplease:processor:${parcelablePleaseVersion}"
 
     testCompile 'junit:junit:4.12'
 }

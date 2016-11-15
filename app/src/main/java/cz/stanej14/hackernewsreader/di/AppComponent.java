@@ -3,6 +3,7 @@ package cz.stanej14.hackernewsreader.di;
 import javax.inject.Singleton;
 
 import cz.stanej14.hackernewsreader.mvp.presenter.BestStoriesFeedPresenter;
+import cz.stanej14.hackernewsreader.mvp.presenter.StoryDetailPresenter;
 import cz.stanej14.hackernewsreader.ui.activity.MainActivity;
 import dagger.Component;
 
@@ -16,4 +17,6 @@ public interface AppComponent {
     void inject(BestStoriesFeedPresenter mainPresenter);
 
     void inject(MainActivity mainActivity);
+
+    void inject(StoryDetailPresenter storyDetailPresenter);
 }

@@ -63,7 +63,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         @NonNull
         private final OnItemClickListener itemClickListener;
@@ -72,20 +72,20 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         @BindView(R.id.text_item_title)
         TextView textTitle;
 
-        public ViewHolder(@NonNull View itemView, @NonNull OnItemClickListener listener) {
+        ViewHolder(@NonNull View itemView, @NonNull OnItemClickListener listener) {
             super(itemView);
             this.itemClickListener = listener;
             ButterKnife.bind(this, itemView);
         }
 
-        public void bind(@NonNull Item item) {
-            itemView.setOnClickListener(v -> itemClickListener.onItemClicked(item.getUrl()));
+        void bind(@NonNull Item item) {
+            itemView.setOnClickListener(v -> itemClickListener.onItemClicked(item));
             textAuthor.setText(item.getAuthor());
             textTitle.setText(item.getTitle());
         }
     }
 
     public interface OnItemClickListener {
-        void onItemClicked(@NonNull String url);
+        void onItemClicked(@NonNull Item item);
     }
 }
