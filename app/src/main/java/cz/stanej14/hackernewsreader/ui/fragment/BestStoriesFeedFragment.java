@@ -66,7 +66,9 @@ public class BestStoriesFeedFragment extends BaseRetryNucleusFragment<BestStorie
         });
         swipeRefreshLayout.setOnRefreshListener(() -> {
             getPresenter().refresh();
-            itemAdapter.clearItems();
+            if (itemAdapter != null) {
+                itemAdapter.clearItems();
+            }
             swipeRefreshLayout.setRefreshing(true);
         });
     }

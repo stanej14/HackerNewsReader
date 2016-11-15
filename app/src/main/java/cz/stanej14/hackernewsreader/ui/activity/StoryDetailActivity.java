@@ -40,7 +40,7 @@ public class StoryDetailActivity extends BaseRetryNucleusActivity<StoryDetailPre
     @BindView(R.id.text_story_detail_title)
     TextView textTitle;
     @BindView(R.id.text_story_detail_url)
-    TextView textUrl;
+    TextView textContent;
     @BindView(R.id.text_story_detail_score)
     TextView textScore;
     @BindView(R.id.recycler_story_detail_comments)
@@ -72,10 +72,10 @@ public class StoryDetailActivity extends BaseRetryNucleusActivity<StoryDetailPre
         progress.setVisibility(View.GONE);
         textTitle.setText(wrapper.item.getTitle());
         if (TextUtils.isEmpty(wrapper.item.getUrl())) {
-            textUrl.setVisibility(View.GONE);
+            textContent.setText(wrapper.item.getText());
         } else {
-            textUrl.setText(wrapper.item.getUrl());
-            textUrl.setOnClickListener(v -> openUrl(wrapper.item.getUrl()));
+            textContent.setText(wrapper.item.getUrl());
+            textContent.setOnClickListener(v -> openUrl(wrapper.item.getUrl()));
         }
         textScore.setText(getString(R.string.story_detail_score, wrapper.item.getScore()));
         textAuthor.setText(getString(R.string.story_detail_author, wrapper.author.id));

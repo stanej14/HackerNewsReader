@@ -6,6 +6,8 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
 
+import java.util.Arrays;
+
 /**
  * HackerNews Item.
  * Created by Jan Stanek[jan.stanek@firma.seznam.cz] on {12.11.16}
@@ -74,6 +76,41 @@ public class Item implements Parcelable {
 
     public String getText() {
         return text;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Item)) return false;
+
+        Item item = (Item) o;
+
+        if (id != item.id) return false;
+        if (numberOfDescendants != item.numberOfDescendants) return false;
+        if (score != item.score) return false;
+        if (time != item.time) return false;
+        if (author != null ? !author.equals(item.author) : item.author != null) return false;
+        if (!Arrays.equals(kids, item.kids)) return false;
+        if (text != null ? !text.equals(item.text) : item.text != null) return false;
+        if (title != null ? !title.equals(item.title) : item.title != null) return false;
+        if (type != null ? !type.equals(item.type) : item.type != null) return false;
+        return url != null ? url.equals(item.url) : item.url == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + numberOfDescendants;
+        result = 31 * result + Arrays.hashCode(kids);
+        result = 31 * result + score;
+        result = 31 * result + (int) (time ^ (time >>> 32));
+        result = 31 * result + (text != null ? text.hashCode() : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (url != null ? url.hashCode() : 0);
+        return result;
     }
 
     @Override

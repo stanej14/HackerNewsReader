@@ -48,8 +48,9 @@ public class StoryDetailPresenter extends BaseRxPresenter<IStoryDetailView> {
 
     @SuppressWarnings("ConstantConditions")
     public void init(@NonNull Bundle bundle) {
-        if (item == null) {
-            item = bundle.getParcelable(ITEM_KEY);
+        Item tempItem = bundle.getParcelable(ITEM_KEY);
+        if (item == null || !item.equals(tempItem)) {
+            item = tempItem;
 
             ArrayList<Integer> ids = new ArrayList<>();
             for (int i : item.getKids()) {

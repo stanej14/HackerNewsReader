@@ -11,7 +11,7 @@
         android:id="@+id/text_item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:textAppearanceMedium"
+        android:textAppearance="?android:textAppearanceSmall"
         tools:text="I was that guy." />
 
     <android.support.v4.widget.Space
@@ -23,5 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/colorPrimaryDark"
         tools:text="Bob Dylan" />
 </LinearLayout>
